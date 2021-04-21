@@ -1,0 +1,125 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+
+* {
+  box-sizing: border-box;
+  font-family: 'Microsoft YaHei';
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  // max-width: $maxWidth;
+  // min-width: $minWidth;
+  margin: 0 auto;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+// ul,
+// li,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+/*已经访问过的链接*/
+a:visited {
+  text-decoration: none;
+}
+
+/*鼠标划过(停留)的链接*/
+a:hover {
+  text-decoration: none;
+}
+
+/* 正在点击的链接，鼠标在元素上按下还没有松开*/
+a:active {
+  text-decoration: none;
+}
+
+/* 获得焦点的时候 鼠标松开时显示的颜色*/
+a:focus {
+  text-decoration: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+*::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  // width: 8px;
+  width: 6px;
+  /*定义纵向滚动条宽度*/
+  // height: 8px;
+  height: 6px;
+  /*定义横向滚动条高度*/
+}
+
+*::-webkit-scrollbar-thumb {
+  /*滚动条内部滑块*/
+  border-radius: 8px;
+  background-color: hsla(220, 4%, 58%, 0.3);
+  transition: background-color 0.3s;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  /*鼠标悬停滚动条内部滑块*/
+  background: #bbb;
+}
+
+*::-webkit-scrollbar-track {
+  /*滚动条内部轨道*/
+  background: #ededed;
+}
+
+.notify-msg-emoji {
+  img {
+    width: 40px;
+  }
+}
+
+// *::-webkit-scrollbar {
+//   /*滚动条整体样式*/
+//   // width: 8px;
+//   width: 6px;
+//   /*定义纵向滚动条宽度*/
+//   // height: 8px;
+//   height: 6px;
+//   /*定义横向滚动条高度*/
+// }
+
+// *::-webkit-scrollbar-thumb {
+//   /*滚动条内部滑块*/
+//   border-radius: 8px;
+//   // background-color: hsla(220, 4%, 58%, 0.3);
+//   background-color: hsla(0, 0%, 100%, 0.1);
+//   transition: background-color 0.3s;
+// }
+
+// *::-webkit-scrollbar-thumb:hover {
+//   /*鼠标悬停滚动条内部滑块*/
+//   background: #2e3238;
+//   // background: #bbb;
+// }
+
+// *::-webkit-scrollbar-track {
+//   /*滚动条内部轨道*/
+//   background: #2e3238;
+//   // background: #ededed;
+// }
