@@ -7,13 +7,14 @@
 
 ## 安装
 - npm install
-- http://127.0.0.1:8080
 
 ## 运行
 - npm run serve
+- http://127.0.0.1:8080
 
 ## alioss对象存储
 - 路径：/utils/ali-oss.js
+
 ```JavaScript
 /**
  *  [accessKeyId] {String}：通过阿里云控制台创建的AccessKey。
