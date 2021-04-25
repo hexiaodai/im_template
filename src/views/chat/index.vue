@@ -41,7 +41,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { CMD, MSG_TYPE, WS_URL, LINE } from '@/utils/websocket'
+import { CMD, MSG_TYPE, LINE } from '@/utils/websocket'
 import sidebar from './components/sidebar'
 import addcontact from './components/addcontact'
 import msgTools from './components/msgTools'
@@ -120,6 +120,8 @@ export default {
           return
         }
       }
+      // 播放提示音
+      this.msgTone()
       // 刷新好友列表
       this.refreshList()
       // 初始化消息结构
@@ -129,6 +131,11 @@ export default {
     },
   },
   methods: {
+    msgTone() {
+      const msgTone = document.getElementById('msg-tone')
+      msgTone.pause()
+      msgTone.play()
+    },
     // 初始化消息结构
     initMsg() {
       this.msgType = MSG_TYPE.TEXT

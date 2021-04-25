@@ -10,7 +10,7 @@
             class="avatar"
             shape="square"
             :size="33"
-            :src="friend.user.avatar"
+            :src="self(msg) ? user.avatar : friend.user.avatar"
           />
           <div
             v-if="msg.msgType == MSG_TYPE.TEXT"
