@@ -1,3 +1,7 @@
+## 项目地址
+- 前端：https://gitee.com/hexiaodai/im_template
+- 后端：https://gitee.com/hexiaodai/im_service
+
 ## 运行环境
 - nodejs
 - npm
