@@ -118,6 +118,7 @@ import { mapGetters } from 'vuex'
 import { CMD } from '@/utils/websocket'
 import { formatTime } from '@/utils/func'
 import mixin from '../mixin'
+import axios from 'axios'
 
 export default {
   name: 'Sidebar',

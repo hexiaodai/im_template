@@ -115,7 +115,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { CMD } from '@/utils/websocket'
+import { CMD, WS_URL } from '@/utils/websocket'
 import { formatTime } from '@/utils/func'
 import mixin from '../mixin'
 
@@ -225,19 +225,22 @@ export default {
     },
   },
   async created() {
-    // 加载好友列表
-    if (this.friend.total == 0) {
-      const { data } = await this.$http.friendList()
-      await this.$store.dispatch('friend/setFriend', data)
-    }
-    this.list = this.friend.list
+    // 加载好友列表 & 加载群列表 & 初始化websocket
+    Promise.all([this.$http.friendList(), this.$http.communityList()])
+      .then((res) => {
+        this.$store.dispatch('friend/setFriend', res[0].data)
+        this.$store.dispatch('community/setCommunity', res[1].data)
+        this.list = this.friend.list
+        this.commList = this.community.list
 
-    // 加载群列表
-    if (this.community.total == 0) {
-      const { data } = await this.$http.communityList()
-      await this.$store.dispatch('community/setCommunity', data)
-    }
-    this.commList = this.community.list
+        this.$store.dispatch(
+          'websock/websocketInit',
+          `${WS_URL}?email=${this.user.email}&token=${this.user.token}`
+        )
+      })
+      .catch((err) => {
+        console.error(err)
+      })
   },
 }
 </script>

@@ -39,8 +39,8 @@ export const MSG_TYPE = {
     ADD_COMUNITY: 7
 }
 
-// export const WS_URL = `ws://127.0.0.1:9000/chat`
-export const WS_URL = `ws://192.168.14.179:9000/chat`
+export const WS_URL = `ws://127.0.0.1:9000/chat`
+// export const WS_URL = `ws://192.168.14.179:9000/chat`
 
 let lockReconnect = false
 let tt = null

@@ -20,6 +20,7 @@ const Message = {
         // 这里有bug，若好友列表未被加载，此条消息会被忽略
         // 解决方案1：将此条消息存入vuex store.dispatch('websock/unprocessedMsg', msg)
         // 解决方案2：等待好友和群列表加载完毕在发起websocket请求
+        // bug已经解决，使用Promise.all()一同请求好友列表和群列表，完成之后在初始化websocket
         if (!validFriend(store.getters.friend.list, femail)) return
         store.dispatch('friend/pushMsg', { msg, email: femail })
         const fuser = store.getters.friend.list[femail].user
@@ -40,6 +41,7 @@ const Message = {
         // 这里有bug，若好友列表未被加载，此条消息会被忽略
         // 解决方案：将此条消息存入vuex store.dispatch('websock/unprocessedMsg', msg)
         // 解决方案2：等待好友和群列表加载完毕在发起websocket请求
+        // bug已经解决，使用Promise.all()一同请求好友列表和群列表，完成之后在初始化websocket
         if (!validCommunity(store.getters.community.list, msg.dstObj)) return
         const info = store.getters.community.list[msg.dstObj].info
         Notification.success({

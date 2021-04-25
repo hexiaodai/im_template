@@ -191,15 +191,6 @@ export default {
       this.toMsgFooter()
     },
   },
-  mounted() {
-    // 延时与websocket建立连接，防止好友列表未被正常加载（这个方案是不好的）
-    setTimeout(() => {
-      this.$store.dispatch(
-        'websock/websocketInit',
-        `${WS_URL}?email=${this.user.email}&token=${this.user.token}`
-      )
-    }, 500)
-  },
 }
 </script>
 
