@@ -35,6 +35,8 @@ let client = new OSS({
 })
 ```
 
+## 功能截图
+
 - 登录、注册
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0421/185201_f0cac64f_5174336.png "屏幕截图.png")
 
