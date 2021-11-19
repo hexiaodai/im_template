@@ -1,8 +1,8 @@
 ## 湖理，Java课程期末作业 & 软件架构期末作业
 
 ## 项目地址
-- 前端：https://gitee.com/hexiaodai/im_template
-- 后端：https://gitee.com/hexiaodai/im_service
+- 前端：https://github.com/hexiaodai/im_template.git
+- 后端：https://github.com/hexiaodai/im_service.git
 
 ## 运行环境
 - nodejs
